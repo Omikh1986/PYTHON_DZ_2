@@ -33,10 +33,29 @@ print(numbers) """
 Задайте список из n чисел последовательности $(1+\frac 1 n)^n$ и выведите на экран их сумму.
 """
 
-n = int(input('Введите n '))
+""" n = int(input('Введите n '))
 sum = 0
 for i in range(1, n+1): 
     m = ((1 + ((1 / i)-int(1/i)))**i)
     print(m)
     sum = m + sum
-print(f'Сумма чисел последовательности $(1+\frac 1 n)^n$ =', {sum})  
+print(f'Сумма чисел последовательности $(1+\frac 1 n)^n$ =', {sum})   """
+
+"""
+Задача 5. 
+Реализуйте алгоритм перемешивания списка. """
+
+
+import random
+def shuffle(spisok):
+    spisok_copy = spisok[:]
+    copy_length = len(spisok_copy)
+    for i in range(copy_length):
+        n = random.randint(0, copy_length-1)
+        temp = spisok_copy[i]
+        spisok_copy[i] = spisok_copy[n]
+        spisok_copy[n] = temp
+    return spisok_copy
+list = [0, 2, 8, 10, 12]
+print(list)
+print(shuffle(list)) 
